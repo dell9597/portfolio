@@ -1,135 +1,189 @@
 "use client";
 import React from 'react';
-import { Mail, Phone, MapPin, Briefcase, GraduationCap, Code2, ExternalLink } from 'lucide-react';
+import { 
+  Code2, Monitor, Globe, Cpu, ArrowRight, 
+  Mail, Github, ExternalLink, BookOpen, 
+  Layers, MessageSquare, ChevronRight 
+} from 'lucide-react';
 
-export default function Home() {
+export default function ProfessionalHub() {
+  // ข้อมูลสมมติสำหรับผลงาน (คุณสามารถแก้เป็นงานจริงของคุณได้)
+  const projects = [
+    {
+      title: "E-Commerce System",
+      desc: "Custom WooCommerce with React integration for bulk management.",
+      tags: ["React", "WooCommerce", "TypeScript"],
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80"
+    },
+    {
+      title: "Marketing Agency Site",
+      desc: "High-performance WordPress site with custom GSAP animations.",
+      tags: ["WordPress", "PHP", "GSAP"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-[#FDFCFB] text-slate-800 font-sans">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="text-xl font-bold text-[#C2410C]">THEERAPAT.</span>
-          <div className="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
-            <a href="#experience" className="hover:text-[#C2410C] transition-colors">Experience</a>
-            <a href="#skills" className="hover:text-[#C2410C] transition-colors">Skills</a>
-            <a href="mailto:theerapat.traikaew@gmail.com" className="hover:text-[#C2410C]">Contact</a>
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-orange-100">
+      
+      {/* 1. Header Navigation */}
+      <nav className="fixed top-0 w-full bg-white/70 backdrop-blur-xl z-50 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center text-white font-black shadow-lg shadow-orange-200">
+              T
+            </div>
+            <span className="text-xl font-bold tracking-tight">Theerapat.dev</span>
+          </div>
+          <div className="hidden md:flex items-center gap-10 text-sm font-semibold text-slate-600">
+            <a href="#work" className="hover:text-orange-600 transition-colors">Work</a>
+            <a href="#services" className="hover:text-orange-600 transition-colors">Services</a>
+            <a href="#blog" className="hover:text-orange-600 transition-colors">Insights</a>
+            <a href="mailto:theerapat.traikaew@gmail.com" className="bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-orange-600 transition-all">
+              Hire Me
+            </a>
           </div>
         </div>
       </nav>
 
-      <main className="max-w-5xl mx-auto px-6 pt-32 pb-20 space-y-32">
-        
-        {/* Hero Section */}
-        <section className="flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1 space-y-8 text-center md:text-left">
-            <div className="inline-block px-4 py-1.5 bg-orange-50 border border-orange-100 rounded-full">
-              <span className="text-orange-700 text-sm font-bold tracking-wide uppercase">Front End Developer</span>
+      {/* 2. Hero Section - Agency Style */}
+      <section className="relative pt-40 pb-20 px-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-700 text-xs font-bold uppercase tracking-widest">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+              </span>
+              Available for new projects
             </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight">
-              Crafting <span className="text-[#C2410C]">Modern</span> Web Experiences
+            <h1 className="text-6xl md:text-8xl font-black text-slate-900 leading-[0.9] tracking-tighter">
+              Front-end <br />
+              <span className="text-orange-600">Architect.</span>
             </h1>
-            <p className="text-lg text-slate-500 leading-relaxed max-w-xl mx-auto md:mx-0">
-              Front-end developer with expertise in WordPress, React, and TypeScript. 
-              Based in Bangkok, focused on building responsive and performant interfaces.
+            <p className="text-xl text-slate-500 leading-relaxed max-w-lg italic border-l-4 border-orange-600 pl-6">
+              "Building robust WordPress ecosystems and high-performance React applications for modern brands."
             </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
-               <a href="mailto:theerapat.traikaew@gmail.com" className="flex items-center gap-2 bg-[#C2410C] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#9A3412] transition-all shadow-lg shadow-orange-200">
-                <Mail size={18} /> Let's Talk
-              </a>
-              <div className="flex items-center gap-3 px-6 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 font-medium">
-                <MapPin size={18} className="text-orange-600" /> Bangkok, TH
-              </div>
+            <div className="flex gap-4">
+              <button className="flex items-center gap-2 bg-orange-600 text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform shadow-xl shadow-orange-100">
+                View Projects <ArrowRight size={20} />
+              </button>
             </div>
           </div>
-        </section>
-
-        {/* Experience Section */}
-        <section id="experience" className="scroll-mt-32">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="p-3 bg-orange-100 rounded-2xl">
-              <Briefcase className="text-[#C2410C]" size={24} />
-            </div>
-            <h2 className="text-3xl font-bold text-slate-900">Work History</h2>
-          </div>
-
-          <div className="space-y-12">
-            {/* Job 1 */}
-            <div className="group relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[2px] before:bg-slate-100">
-              <div className="absolute left-[-5px] top-2 w-[12px] h-[12px] rounded-full bg-orange-600 border-4 border-white ring-1 ring-orange-200" />
-              <div className="flex flex-col md:flex-row md:justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900">Front End Web Developer</h3>
-                  <p className="text-orange-700 font-semibold">Neighbors and Friends Ltd.</p>
+          <div className="relative">
+             <div className="aspect-square bg-gradient-to-br from-orange-100 to-white rounded-[3rem] border border-orange-50 rotate-3 flex items-center justify-center relative overflow-hidden shadow-2xl">
+                {/* ตกแต่งด้วย Code Snippet หรือภาพ Mockup */}
+                <div className="absolute top-10 left-10 p-4 bg-white rounded-xl shadow-lg border border-slate-50 flex gap-2">
+                    <Code2 className="text-orange-600" />
+                    <span className="font-mono text-sm">npm run dev</span>
                 </div>
-                <span className="text-sm font-medium text-slate-400 mt-1">Sep 2023 — Present</span>
-              </div>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-500 text-[15px]">
-                <li className="flex gap-2"><span>•</span> Custom WordPress & WooCommerce Development</li>
-                <li className="flex gap-2"><span>•</span> React & TypeScript implementation</li>
-                <li className="flex gap-2"><span>•</span> Performance & SEO Optimization</li>
-                <li className="flex gap-2"><span>•</span> CSV Bulk Product Management Systems</li>
-              </ul>
-            </div>
-
-            {/* Job 2 */}
-            <div className="group relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[2px] before:bg-slate-100">
-              <div className="absolute left-[-5px] top-2 w-[12px] h-[12px] rounded-full bg-slate-300 border-4 border-white" />
-              <div className="flex flex-col md:flex-row md:justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900 font-medium opacity-80">Front End Web Developer (Intern)</h3>
-                  <p className="text-slate-500 font-semibold">G-TECH & APPLICATION CO,LTD.</p>
+                <div className="absolute bottom-10 right-10 p-4 bg-slate-900 text-white rounded-xl shadow-lg flex gap-2">
+                    <Layers size={20} className="text-orange-400" />
+                    <span className="text-sm font-semibold">React + TypeScript</span>
                 </div>
-                <span className="text-sm font-medium text-slate-400 mt-1">Nov 2022 — Mar 2023</span>
-              </div>
-              <p className="text-slate-500">Developed seminar and event websites using Astro.</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Services - What you actually do */}
+      <section id="services" className="py-24 bg-slate-50 px-6">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="space-y-4">
+              <h2 className="text-4xl font-black">Expertise.</h2>
+              <p className="text-slate-500">How I can help your business grow.</p>
             </div>
           </div>
-        </section>
 
-        {/* Skills Section */}
-        <section id="skills" className="scroll-mt-32">
-          <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-16 text-white overflow-hidden relative">
-            <div className="absolute top-0 right-0 p-8 opacity-10">
-              <Code2 size={200} />
-            </div>
-            
-            <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
-              <Code2 className="text-orange-500" /> Technical Arsenal
-            </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: <Monitor />, title: "Custom WordPress", desc: "Performance-focused themes & plugins built from scratch." },
+              { icon: <Code2 />, title: "React Applications", desc: "Scalable dashboards and complex interface systems." },
+              { icon: <Globe />, title: "Responsive UI", desc: "Pixel-perfect conversion from Figma to clean, fast code." }
+            ].map((s, i) => (
+              <div key={i} className="group p-8 bg-white rounded-3xl border border-slate-100 hover:border-orange-200 transition-all hover:shadow-2xl hover:shadow-orange-100">
+                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                  {s.icon}
+                </div>
+                <h4 className="text-xl font-bold mb-3">{s.title}</h4>
+                <p className="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
-              <div className="space-y-4">
-                <h4 className="text-orange-500 font-bold uppercase tracking-wider text-xs">Core Tech</h4>
-                <div className="flex flex-wrap gap-2 text-sm">
-                  {['React', 'Next.js', 'TypeScript', 'JavaScript'].map(s => (
-                    <span key={s} className="px-3 py-1 bg-white/10 rounded-lg border border-white/5">{s}</span>
+      {/* 4. Featured Work - Showcase */}
+      <section id="work" className="py-24 px-6">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="flex justify-between items-end">
+            <h2 className="text-4xl font-black">Selected Work.</h2>
+            <button className="text-orange-600 font-bold flex items-center gap-1 hover:gap-2 transition-all">
+              All Projects <ChevronRight size={20} />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {projects.map((p, i) => (
+              <div key={i} className="group cursor-pointer">
+                <div className="relative aspect-[16/10] bg-slate-100 rounded-[2.5rem] overflow-hidden mb-6">
+                  <img src={p.image} alt={p.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" />
+                  <div className="absolute top-6 right-6 p-3 bg-white/90 backdrop-blur rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ExternalLink size={20} />
+                  </div>
+                </div>
+                <div className="flex gap-3 mb-3">
+                  {p.tags.map(tag => (
+                    <span key={tag} className="text-[10px] font-bold uppercase tracking-widest text-slate-400 bg-slate-50 px-2 py-1 rounded">
+                      {tag}
+                    </span>
                   ))}
                 </div>
+                <h3 className="text-2xl font-bold mb-2">{p.title}</h3>
+                <p className="text-slate-500">{p.desc}</p>
               </div>
-              <div className="space-y-4">
-                <h4 className="text-orange-500 font-bold uppercase tracking-wider text-xs">E-Commerce</h4>
-                <div className="flex flex-wrap gap-2 text-sm">
-                  {['WordPress', 'WooCommerce', 'PHP'].map(s => (
-                    <span key={s} className="px-3 py-1 bg-white/10 rounded-lg border border-white/5">{s}</span>
-                  ))}
-                </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Blog/Insights Section - The "Post" part */}
+      <section id="blog" className="py-24 bg-orange-600 text-white px-6 rounded-[4rem] mx-6">
+        <div className="max-w-5xl mx-auto text-center space-y-12">
+          <h2 className="text-4xl md:text-5xl font-black">Insights & Knowledge.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <div className="p-8 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 hover:bg-white/20 transition-all cursor-pointer">
+              <span className="text-sm font-bold opacity-60">Mar 2026</span>
+              <h4 className="text-xl font-bold mt-2 mb-4">How I optimized WooCommerce performance for a large agency.</h4>
+              <div className="flex items-center gap-2 text-sm font-bold">
+                Read Article <ArrowRight size={16} />
               </div>
-              <div className="space-y-4">
-                <h4 className="text-orange-500 font-bold uppercase tracking-wider text-xs">Design & Tools</h4>
-                <div className="flex flex-wrap gap-2 text-sm">
-                  {['Tailwind CSS', 'Figma', 'Adobe Illustrator', 'REST API'].map(s => (
-                    <span key={s} className="px-3 py-1 bg-white/10 rounded-lg border border-white/5">{s}</span>
-                  ))}
-                </div>
+            </div>
+            <div className="p-8 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 hover:bg-white/20 transition-all cursor-pointer">
+              <span className="text-sm font-bold opacity-60">Feb 2026</span>
+              <h4 className="text-xl font-bold mt-2 mb-4">30 Days of React Mastery: A progress report.</h4>
+              <div className="flex items-center gap-2 text-sm font-bold">
+                Read Article <ArrowRight size={16} />
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-      </main>
-
-      <footer className="border-t border-slate-100 py-12 text-center text-slate-400 text-sm">
-        <p>© {new Date().getFullYear()} Theerapat Traikaew. Built with Next.js & Tailwind</p>
+      {/* 6. Footer */}
+      <footer className="py-20 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="text-center md:text-left">
+            <p className="text-2xl font-bold mb-2">Let's build something epic.</p>
+            <p className="text-slate-500">Bangkok based, available worldwide.</p>
+          </div>
+          <div className="flex gap-6">
+            <a href="#" className="p-4 bg-slate-50 rounded-2xl hover:text-orange-600 transition-all"><Github /></a>
+            <a href="#" className="p-4 bg-slate-50 rounded-2xl hover:text-orange-600 transition-all"><MessageSquare /></a>
+            <a href="#" className="p-4 bg-slate-50 rounded-2xl hover:text-orange-600 transition-all"><Mail /></a>
+          </div>
+        </div>
       </footer>
     </div>
   );
