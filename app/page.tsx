@@ -8,7 +8,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="text-xl font-bold text-[#C2410C]">THEERAPAT</span>
+          <span className="text-xl font-bold text-[#C2410C]">THEERAPAT.</span>
           <div className="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
             <a href="#experience" className="hover:text-[#C2410C] transition-colors">Experience</a>
             <a href="#skills" className="hover:text-[#C2410C] transition-colors">Skills</a>
